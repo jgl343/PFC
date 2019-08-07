@@ -1,0 +1,21 @@
+\subsection{Firebase}
+Firebase es una plataforma para el desarrollo de aplicaciones web y aplicaciones móviles. Firebase se integra actualmente con otros servicios de Google para poder ofrecer productos a mayor escala para los desarrolladores.
+\\
+Los servicios ofrecidos por Firebase son los siguientes: 
+\begin{enumerate}
+\item \textbf{Firebase Analytics: } es una aplicación gratuita que proporciona una visión profunda sobre el uso de la aplicación por parte de los usuarios.
+\item \textbf{Firebase Cloud Messaging: }
+Antiguamente conocido como Google Cloud Messaging (GCM), Firebase Cloud Messaging (FCM) es una plataforma para mensajes y notificaciones para Android, iOS, y aplicaciones web que actualmente puede ser usada de forma gratuita.
+\item \textbf{Firebase Auth:} es un servicio que puede autenticar los usuarios utilizando únicamente código del lado del cliente. Incluye la autenticación mediante Facebook, GitHub, Twitter y Google. Además, incluye un sistema de administración del usuario por el cual los desarrolladores pueden habilitar la autenticación de usuarios con email y contraseña que se almacenarán en Firebase.
+
+\item \textbf{Realtime Database:}
+Firebase proporciona una base de datos en tiempo real y back-end. El servicio proporciona a los desarrolladores de aplicaciones una API que permite que la información de las aplicaciones sea sincronizada y almacenada en la nube de Firebase. La compañía habilita integración con aplicaciones Android, iOS, JavaScript, Java, Objective-C, Swift y Node.js. La base de datos es también accesible a través de una REST API e integración para varios sistemas de Javascript como AngularJS, React, Ember.js y Backbone.js.La REST API utiliza el protocolo SSE (del inglés Server-Sent Events), el cual es una API para crear conexiones de HTTP para recibir notificaciones push de un servidor.
+
+\item \textbf{Firebase Storage:} proporciona cargas y descargas seguras de archivos para aplicaciones Firebase, sin importar la calidad de la red. El desarrollador lo puede utilizar para almacenar imágenes, audio, vídeo, o cualquier otro contenido generado por el usuario. Firebase Storage se basa en el almacenamiento de Google Cloud Storage.
+
+
+\item \textbf{Firebase Firestore:} es un servicio derivado de Google Cloud Platform, adaptado a la plataforma de Firebase. Al igual que Realtime Database, es una base de datos NoSQL, aunque presenta diversas diferencias. Se organiza en forma de documentos agrupados en colecciones, y en ellos se pueden incluir tanto campos de diversos tipos (cadenas de texto, números, puntos geográficos, referencias a la propia base de datos, arrays, booleanos, marcas de tiempo, e incluso objetos propios) como otras subcolecciones.
+
+\end{enumerate}
+
+Utilizaremos Realtime Database ya que nos ofrece la estabilidad de un producto muy probado y usado y muy baja latencia, por lo que es una excelente opción para la sincronización frecuente de estados.

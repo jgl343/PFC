@@ -1,0 +1,29 @@
+\subsubsection{Firebase Realtime Database}
+Firebase Realtime Database es una base de datos alojada en la nube que nos permitirá almacenar y sincronizar datos. Los datos se sincronizan con todos los clientes en tiempo real y se mantienen disponibles cuando la app no tiene conexión.
+\\
+
+Los datos se almacenan en formato JSON y se sincronizan en tiempo real con cada cliente conectado. Cuando compilas apps multiplataforma con el SDK de iOS, Android y JavaScript, todos los clientes comparten una instancia de Realtime Database y reciben actualizaciones automáticamente con los datos más recientes.
+\\
+
+Las funciones clave que nos proporciona son las siguientes:
+
+\begin{enumerate}
+
+\item \textbf{Tiempo real:}
+En lugar de solicitudes típicas de HTTP, Firebase Realtime Database usa la sincronización de datos (cada vez que cambian los datos, los dispositivos conectados reciben esa actualización en milisegundos). Proporciona experiencias colaborativas y envolventes sin pensar en el código de red.
+\item \textbf{Sin conexión:}
+Las apps Firebase continúan respondiendo, incluso sin conexión, dado que el SDK de Firebase Realtime Database hace que tus datos persistan en el disco. Cuando se restablece la conexión, el dispositivo cliente recibe los cambios que faltaban y los sincroniza con el estado actual del servidor.
+\item \textbf{Acceso desde dispositivos cliente:}
+Se puede acceder a Firebase Realtime Database directamente desde un dispositivo móvil o un navegador web; no se necesita un servidor de aplicaciones. La seguridad y la validación de datos están disponibles a través de las reglas de seguridad de Firebase Realtime Database: reglas basadas en expresiones que se ejecutan cuando se leen o se escriben datos.
+\item \textbf{Escalamiento en varias bases de datos:}
+Con Firebase Realtime Database, puedes satisfacer las necesidades de datos de la app a gran escala: podrás dividir la información en diversas instancias de bases de datos dentro del mismo proyecto de Firebase. Usa Firebase Authentication para optimizar el proceso de autenticación en el proyecto. Podrás autenticar a usuarios en varias instancias de la base de datos. Controla el acceso a la información de cada base de datos. Para ello, usa las reglas personalizadas de Firebase Realtime Database en cada una de las instancias de la base de datos.
+
+\end{enumerate}
+
+\paragraph{¿Cómo funciona?}
+
+Firebase Realtime Database te permite compilar aplicaciones ricas y colaborativas, ya que permite el acceso seguro a la base de datos directamente desde el código del cliente. Los datos persisten de forma local. Además, incluso cuando no hay conexión, se siguen activando los eventos en tiempo real, lo que proporciona una experiencia adaptable al usuario final. Cuando el dispositivo vuelve a conectarse, Realtime Database sincroniza los cambios de los datos locales con las actualizaciones remotas que ocurrieron mientras el cliente estuvo sin conexión, lo que combina los conflictos de forma automática.
+
+Realtime Database proporciona un lenguaje flexible de reglas basadas en expresiones, llamado reglas de seguridad de Firebase Realtime Database, para definir cómo se deberían estructurar los datos y en qué momento se pueden leer o escribir. Integrar Firebase Authentication permite que los programadores definan quién tiene acceso a qué datos y cómo acceden a ellos.
+
+Realtime Database es una base de datos NoSQL y, como tal, tiene diferentes optimizaciones y funcionalidades en comparación con una base de datos relacional. La API de Realtime Database está diseñada para permitir solo operaciones que se puedan ejecutar rápidamente. Eso permite crear una excelente experiencia de tiempo real que puede servir a millones de usuarios sin afectar la capacidad de respuesta. Es importante pensar cómo deben acceder a los datos los usuarios y estructurarlos según corresponda.

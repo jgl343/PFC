@@ -1,0 +1,9 @@
+Ahora vamos a listar un par de herramientas para Android que nos ayudarán a identificar las áreas en las que mejorar el consumo de batería. Utilizaremos estas herramientas para aplicar en estas áreas los principios de Lazy First.
+
+\begin{enumerate}
+\item \textbf{Profile GPU Rendering:} Esta herramienta nos mostrará, en forma de histograma de desplazamiento,una representación visual del tiempo necesario para representar los fotogramas de una ventana de IU en relación con un benchmark de 16 ms por fotograma.
+
+En las GPU menos potentes, la frecuencia de relleno disponible (la velocidad a la cual la GPU puede rellenar el búfer de fotogramas) puede ser bastante baja. A medida que la aumenta la cantidad de píxeles requeridos para dibujar un fotograma, la GPU puede tardar más en procesar comandos nuevos y solicitar tiempo de espera al resto del sistema hasta ordenarse. La herramienta de generación de perfiles te ayuda a detectar los casos en que el rendimiento de la GPU se ve afectado cuando esta intenta dibujar píxeles o sobrecargado debido a una superposición voluminosa.
+\item \textbf{Battery Historian:}Una útil herramienta para inspeccionar la relación entre la batería y los eventos de un dispositivo android, estando este apagado. Nos permitirá visualizar eventos de nivel de sistema y aplicación en una línea de tiempo para ver fácilmente varias estadísticas desde que se cargó el dispositivo por completo por última vez, es decir, podremos seleccionar nuestra aplicación y ver la evolución de la carga de la batería respecto a esta.\cite{BATTERYHISTORIAN}
+
+\end{enumerate}

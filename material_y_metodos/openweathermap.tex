@@ -1,0 +1,123 @@
+\subsection{OpenWeather Weather API}
+
+OpenWeather nos ofrece una potente API con la que obtendremos el pronóstico meteorológico diario. Con una simple llamada como la siguiente:
+\begin{itemize}
+
+
+\item  \url{http://api.openweathermap.org/data/2.5/weather?lat=36.7311957&lon=-2.854627&appid=d488064b89a68d822fd0f952df6b7c83}
+\end{itemize}
+Podremos obtener la información necesaria acerca de las condiciones meteorológicas. Los parámetros que deberemos rellenar son los siguientes:
+
+\begin{enumerate}
+\item \textbf{lat:} La latitud será la coordenada geográfica proporcionada por el sistema GPS de nuestro dispositivo móvil, nos servirá para identificar la posición. En el ejemplo es \emph{36.7311957}.
+\item \textbf{lon:} La longitud será la Coordenada geográfica proporcionada por el sistema GPS de nuestro dispositivo móvil, nos servirá para identificar la posición. En el ejemplo es \emph{-2.854627}.
+\item \textbf{appid:} Nuestra API Key, necesaria para autentificar la llamada, nos la proporcionan al crearnos una cuenta en OpenWeatherMap \cite{OPENWEATHER}. En el ejemplo es \emph{d488064b89a68d822fd0f952df6b7c83}.
+\end{enumerate}
+
+La respuesta que recibiremos al hacer la llamada del ejemplo, será un mensaje JSON, con la siguiente estructura:
+\\
+\lstset{
+    string=[s]{"}{"},
+    stringstyle=\color{blue},
+    comment=[l]{:},
+    commentstyle=\color{black},
+}
+\begin{lstlisting}
+{
+"coord":
+	{
+		"lon":-2.85,
+		"lat":36.73
+	},
+"weather":[
+	{
+		"id":800,
+		"main":"Clear",
+		"description":"clear sky",
+		"icon":"01n"
+	}
+		],
+"base":"stations",
+"main":
+	{
+		"temp":285.514,
+		"pressure":1013.75,
+		"humidity":100,
+		"temp_min":285.514,
+		"temp_max":285.514
+	},
+"wind":
+	{
+		"speed":5.52,
+		"deg":311
+	},
+"clouds":
+	{
+		"all":0
+	},
+"dt":1533231000,
+"sys":
+	{
+		"message":0.0025,
+		"country":"ES",
+		"sunrise":1533187107,
+		"sunset":1533237375
+	},
+"id":2521382,
+"name":"Balerma",
+"cod":200
+	}
+}
+\end{lstlisting}
+
+A continuación vamos a describir cada uno de los atributos de la respuesta:
+
+\begin{enumerate}
+\item \textbf{coord:}
+\begin{enumerate}
+\item lon: Longitud.
+\item lat: Latitud.
+\end{enumerate}
+\item \textbf{weather:} Códigos de la información meteorológica.
+\begin{enumerate}
+\item id: Identificador del clima.
+\item main: Grupo de condición meteorológica (Lluvia, Nieve, Despejado, etc.)
+\item description: Condición meteorológica dentro de su grupo
+\item  icon. Icono del clima.
+\end{enumerate}
+\item  \textbf{base:} Párametro interno.
+\item  \textbf{main:}
+\begin{enumerate}
+\item  temp: Temperatura. Unidad por defecto: Kelvin.
+\item  pressure: Presión atmosférica.
+\item  humidity: Porcentaje de humedad.
+\item  temp\_min: Temperatura mínima en el momento. Unidad por defecto: Kelvin.
+\item  temp\_max: Temperatura máxima en el momento. Unidad por defecto: Kelvin.
+\end{enumerate}
+\item  \textbf{wind:}
+\begin{enumerate}
+\item speed: Velocidad del viento. Unidad por defecto: m/s.
+\item deg: Dirección del viento, en grados.
+\end{enumerate}
+\item  \textbf{clouds:}
+\begin{enumerate}
+\item all: Porcentaje de nubosidad.
+\end{enumerate}
+\item  \textbf{dt:}Tiempo empleado en calcular los datos, unix, UTC.
+\item  \textbf{sys:}
+\begin{enumerate}
+\item type: Parámetro interno.
+\item id: Parámetro interno.
+\item message: Parámetro interno.
+\item country: Código del país (GB, JP etc.)
+\item sunrise: Hora del amanecer, unix, UTC.
+\item sunset: Hora del anochecer, unix, UTC.
+\end{enumerate}
+\item  \textbf{id:} Identificador de la población.
+\item  \textbf{name:} Nombre de la población.
+\item  \textbf{cod:} Parámetro interno.
+\end{enumerate}
+
+Tendremos especialmente en cuenta los parámetros de la velocidad y la dirección del viento, ya que serán los que utilicemos para comprobar si el usuario de la aplicación está a la deriva y realizar la alerta de rescate.
+
+\footnote{Fuente: Open Weather \cite{OPENWEATHER}}
