@@ -4,28 +4,28 @@
 \section{Interés y Objetivos}
 
 Ya sea con una ruta en kayak o prácticando kite surf, cada año, los deportes
-marítimos cada vez ganan más adeptos, y el abanico de propuestas se multiplican, \cite{RDACUA} . Entre los deportes más novedosos que ofrece nuestro litoral almeriense, se encuentra el wakeboard y el paddel surf. 
+marítimos cada vez ganan más adeptos, y el abanico de propuestas se multiplican~\cite{RDACUA}. Entre los deportes más novedosos que ofrece nuestro litoral almeriense, se encuentra el wakeboard y el paddel surf. 
 
-Todos ellos tienen un denominador común, el mar. Un denominador que lejos de presentarse apacible, produjo 115 muertos por ahogamientos en 2016, \cite{SalvamentoMaritimo}, ya que existen situaciones que pueden suponer un riesgo un navegante, una perdida de consciencia, acompañada de una fuerte corriente pueden desembocar en una situación de peligro, donde la alerta temprana puede suponer la diferencia entre una situación anecdótica y un resultado fatal.
+Todos ellos tienen un denominador común, el mar. Un denominador que lejos de presentarse apacible, produjo 115 muertos por ahogamientos en 2016~\cite{SalvamentoMaritimo}, ya que existen situaciones que pueden suponer un riesgo un navegante, una perdida de consciencia, acompañada de una fuerte corriente pueden desembocar en una situación de peligro, donde la alerta temprana puede suponer la diferencia entre una situación anecdótica y un resultado fatal.
 
 Para ello, en este proyecto, planteamos un sistema de localización marítima y alerta temprana para intentar alertar lo antes posible cuando se produzca un incidente en el mar y que se pueda socorrer con diligencia evitando así accidentes mortales.
 
 
-El objetivo de este proyecto es implementar una aplicación movil que funcione como cliente, emitiendo la posición GPS del dispositivo en determinadas condiciones, y como monitor para que pueda ser localizada la señal del dispositivo que solicita ayuda. \cite{VRUIZ}
+El objetivo de este proyecto es implementar una aplicación movil que funcione como cliente, emitiendo la posición GPS del dispositivo en determinadas condiciones, y como monitor para que pueda ser localizada la señal del dispositivo que solicita ayuda~\cite{VRUIZ}.
 
 Realizaremos un estudio sobre como abordar las condiciones necesarias para que el dispositivo empiece a transmitir sus coordenadas, basándonos en los siguientes requisitos:
 \begin{enumerate}
-\item El móvil está en el agua 
-\item La velocidad de desplazamiento del móvil es inferior a un determinado umbral durante un determinado periodo de tiempo
+\item El móvil está en el agua.
+\item La velocidad de desplazamiento del móvil es inferior a un determinado umbral durante un determinado periodo de tiempo.
 \end{enumerate}
 
 Cuando se cumplan dichos requisitos, el sistema comenzará a transmitir sus coordenadas y éstas llegarán a un servidor. Dicho servidor debería poder ser monitorizado, al menos, usando un móvil que ejecuta la aplicación radio faro, de manera que permitiera la localización del móvil que está emitiendo la señal de ayuda. 
 
 En caso de que se cumplan los requisitos de socorro, la aplicación radio faro comenzará una cuenta atrás de 5 minutos, en caso de no detenerla, el dispositivo móvil llamará automáticamente al número de emergencias 112, que derivará la llamada de socorro al centro más cercano.
 
-Vamos a utilizar el sistema operativo Android \cite{Android}, ya que es el más utilizado, y por los intereses de usabilidad del proyecto interesa que tenga toda la difusión posible.
+Vamos a utilizar el sistema operativo Android~\cite{Android}, ya que es el más utilizado, y por los intereses de usabilidad del proyecto interesa que tenga toda la difusión posible.
 
-Utilizaremos la herramienta de desarrollo Android Studio, proporcionada por Google. \cite{AS}
+Utilizaremos la herramienta de desarrollo Android Studio, proporcionada por Google~\cite{AS}.
 
 Nos decantamos por utilizar una aplicación en Android nativo, ya que, por los requisitos de utilización de funcionalidades y servicios del dispositivo, como el GPS, y la necesidad de optimizar recursos como la batería, ya que el escenario donde se va a utilizar, principalmente en entornos marinos, no disponen de accesibilidad a la red eléctrica y la utilización de accesorios como baterías externas puede no resultar funcional.
 
@@ -41,7 +41,7 @@ relacionados con mareas y vientos,
 determinar exactamente los parámetros para
  determinar si una situación es de riesgo o no. 1 mes.
 \item  \textbf{Estudio de viabilidad del proyecto:} Selección de las APIs que mejor se adapten a nuestras necesidades, entre ellas, una API meteorológica y otra de posicionamiento GPS. 1/2 mes.
-\item  \textbf{Diseño técnico de la aplicación:} Búsqueda de soluciones tecnológicas para dar respuesta a los requisitos funcionales.1/2 mes.
+\item  \textbf{Diseño técnico de la aplicación:} Búsqueda de soluciones tecnológicas para dar respuesta a los requisitos funcionales. 1/2 mes.
 \item  \textbf{Implementación del sistema:} Fase de desarrollo software usando herramientas de software libre. 2 meses.
 \item  \textbf{Fase de pruebas:} Realización de pruebas unitarias como de aceptación para comprobar el correcto funcionamiento en entorno real. Realizar anotaciones de mejoras para implementar en un futuro. 1/2 mes.
 \item  \textbf{Escritura de la memoria del proyecto:} 1 mes.
