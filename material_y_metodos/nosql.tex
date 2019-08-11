@@ -1,50 +1,157 @@
 \subsubsection{Bases de datos no relacionales NoSQL}
 
-Empezamos definiendo el concepto de base de datos no relacionales NoSQL.
+Empezamos definiendo el concepto de base de datos no relacionales
+ NoSQL.
 
-Pese a la no existencia de una definición formal, cuando hablamos de base datos NoSQL nos referimos a una amplia clase de sistemas de gestión de datos (mecanismos para el almacenamiento y recuperación de datos) que difieren, en aspectos importantes, del modelo clásico de relaciones entre entidades (o tablas) existente en los sistemas de gestión bases de datos relacionales, siendo el más destacado el que no usan SQL como lenguaje principal de consulta.
-Aunque son conocidas desde la década de los 60 del pasado siglo, su auge actual viene determinado por el uso que, de estos sistemas han hecho las principales compañías de internet como Amazon, Google, Twitter y Facebook. Estas compañías tenían que enfrentarse a nuevos desafíos en el tratamiento de los datos motivados por el enorme crecimiento de la Web donde se requería dar respuesta a la necesidad de proporcionar información procesada a partir de grandes volúmenes de datos con unas estructuras horizontales, más o menos, similares y con aplicaciones web que debían dar respuesta a las peticiones de un número elevado e indeterminado de usuarios en el menor tiempo posible. Estas compañías se dieron cuenta de que el rendimiento y sus necesidades de tiempo real eran más importantes que la consistencia de los datos, aspecto este último al que las bases de datos relacionales tradicionales dedicaban una gran cantidad de tiempo de proceso.
+Pese a la no existencia de una definición formal, cuando hablamos 
+de base datos NoSQL nos referimos a una amplia clase de sistemas
+ de gestión de datos (mecanismos para el almacenamiento y
+ recuperación de datos) que difieren, en aspectos importantes, 
+del modelo clásico de relaciones entre entidades (o tablas) existente
+ en los sistemas de gestión bases de datos relacionales, siendo el más 
+destacado el que no usan SQL como lenguaje principal de consulta.
+Aunque son conocidas desde la década de los 60 del pasado siglo,
+ su auge actual viene determinado por el uso que, de estos sistemas
+ han hecho las principales compañías de internet como Amazon,
+ Google, Twitter y Facebook. Estas compañías tenían que enfrentarse
+ a nuevos desafíos en el tratamiento de los datos motivados por
+ el enorme crecimiento de la Web donde se requería dar respuesta
+ a la necesidad de proporcionar información procesada a partir de
+ grandes volúmenes de datos con unas estructuras horizontales,
+ más o menos, similares y con aplicaciones web que debían dar 
+respuesta a las peticiones de un número elevado e indeterminado
+ de usuarios en el menor tiempo posible. Estas compañías se dieron 
+cuenta de que el rendimiento y sus necesidades de tiempo real eran
+ más importantes que la consistencia de los datos, aspecto este último
+ al que las bases de datos relacionales tradicionales dedicaban 
+una gran cantidad de tiempo de proceso.
 
-Las características comunes entre todas las implementaciones de bases de datos NoSQL suelen ser las siguientes:
+Las características comunes entre todas las implementaciones de
+ bases de datos NoSQL suelen ser las siguientes:
 \begin{enumerate}
-\item \textbf{Consistencia Eventual:} A diferencia de las bases de datos relacionales tradicionales, en la mayoría de sistemas NoSQL, no se implementan mecanismos rígidos de consistencia que garanticen que cualquier cambio llevado a cabo en el sistema distribuido sea visto, al mismo tiempo, por todos los nodos y asegurando, también, la no violación de posibles restricciones de integridad de los datos u otras reglas definidas. En su lugar y para obtener un mayor rendimiento, se ofrece el concepto de "consistencia eventual", en el que los cambios realizados "con el tiempo" serán propagados a todos los nodos por lo que, una consulta podría no devolver los últimos datos disponibles o proporcionar datos inexactos, problema conocido como lecturas sucias u obsoletas.
-Asimismo, en algunos sistemas NoSQL se pueden presentar perdidas de datos en escritura. Esto se conoce también como BASE (Basically Available Soft-state Eventual Consistency), en contraposición a ACID (Atomicity, Consistency, Isolation, Durability), su analogía en las bases de datos relacionales.
-\item \textbf{Flexibilidad en el esquema:} En la mayoría de base de datos NoSQL, los esquemas de datos son dinámicos; es decir, a diferencia de las bases de datos relacionales en las que, la escritura de los datos debe adaptarse a unas estructuras(o tablas, compuestas a su vez por filas y columnas) y tipos de datos pre-definidos, en los sistemas NoSQL, cada registro (o documento, como se les suele llamar en estos casos) puede contener una información con diferente forma cada vez, pudiendo así almacenar sólo los atributos que interesen en cada uno de ellos, facilitando el polimorfismo de datos bajo una misma colección de información. También se pueden almacenar estructuras complejas de datos en un sólo documento, como por ejemplo almacenar la información sobre una publicación de un blog (título, cuerpo de texto, autor, etc) junto a los comentarios y etiquetas vertidos sobre el mismo, todo en un único registro.
-\item \textbf{Escalabilidad horizontal:} Por escalabilidad horizontal se entiende la posibilidad de incrementar el rendimiento del sistema añadiendo, simplemente, más nodos (servidores) e indicando al sistema cuáles son los nodos disponibles.
-\item \textbf{Estructura distribuida:} Generalmente los datos se distribuyen, entre los diferentes nodos que componen el sistema. Hay dos estilos de distribución de datos:
+\item \textbf{Consistencia Eventual:} A diferencia de las bases 
+de datos relacionales tradicionales, en la mayoría de sistemas
+ NoSQL, no se implementan mecanismos rígidos de consistencia 
+que garanticen que cualquier cambio llevado a cabo en el sistema
+ distribuido sea visto, al mismo tiempo, por todos los nodos y
+ asegurando, también, la no violación de posibles restricciones 
+de integridad de los datos u otras reglas definidas. En su lugar
+ y para obtener un mayor rendimiento, se ofrece el concepto 
+de "consistencia eventual", en el que los cambios realizados
+ "con el tiempo" serán propagados a todos los nodos por lo que,
+ una consulta podría no devolver los últimos datos disponibles
+ o proporcionar datos inexactos, problema conocido como
+ lecturas sucias u obsoletas.
+Asimismo, en algunos sistemas NoSQL se pueden presentar
+ perdidas de datos en escritura. Esto se conoce también como 
+BASE (Basically Available Soft-state Eventual Consistency), 
+en contraposición a ACID (Atomicity, Consistency, Isolation, Durability), 
+su analogía en las bases de datos relacionales.
+\item \textbf{Flexibilidad en el esquema:} En la mayoría de
+ base de datos NoSQL, los esquemas de datos son dinámicos; 
+es decir, a diferencia de las bases de datos relacionales en las que,
+ la escritura de los datos debe adaptarse a unas estructuras(o tablas, 
+compuestas a su vez por filas y columnas) y tipos de datos pre-definidos,
+ en los sistemas NoSQL, cada registro (o documento, como se les 
+suele llamar en estos casos) puede contener una información con 
+diferente forma cada vez, pudiendo así almacenar sólo los atributos 
+que interesen en cada uno de ellos, facilitando el polimorfismo de 
+datos bajo una misma colección de información. También se pueden 
+almacenar estructuras complejas de datos en un sólo documento, 
+como por ejemplo almacenar la información sobre una publicación 
+de un blog (título, cuerpo de texto, autor, etc) junto a los comentarios
+ y etiquetas vertidos sobre el mismo, todo en un único registro.
+\item \textbf{Escalabilidad horizontal:} Por escalabilidad horizontal
+ se entiende la posibilidad de incrementar el rendimiento del sistema
+ añadiendo, simplemente, más nodos (servidores) e indicando al sistema
+ cuáles son los nodos disponibles.
+\item \textbf{Estructura distribuida:} Generalmente los datos se 
+distribuyen, entre los diferentes nodos que componen el sistema. 
+Hay dos estilos de distribución de datos:
 \begin{enumerate}
-\item \textbf{Particionado (ó Sharding):} El particionado distribuye los datos entre múltiples servidores de forma que, cada servidor, actúe como única fuente de un subconjunto de datos. Normalmente, a la hora de realizar esta distribución, se utilizan mecanismos de tablas de hash distribuidas (DHT). 
-\item \textbf{Réplica:} La réplica copia los datos entre múltiples servidores, de forma que cada bit de datos pueda ser encontrado en múltiples lugares. Esta réplica puede realizarse de dos maneras:
-Réplica maestro-esclavo en la que un servidor gestiona la escritura de la copia autorizada mientras que los esclavos se sincronizan con este servidor maestro y sólo gestionan las lecturas.
-Réplica peer-to-peer en la que se permiten escrituras a cualquier nodo y ellos se coordinan entre sí para sincronizar sus copias de los datos
+\item \textbf{Particionado (ó Sharding):} El particionado distribuye 
+los datos entre múltiples servidores de forma que, cada servidor,
+ actúe como única fuente de un subconjunto de datos. Normalmente, 
+a la hora de realizar esta distribución, se utilizan mecanismos de tablas
+ de hash distribuidas (DHT). 
+\item \textbf{Réplica:} La réplica copia los datos entre múltiples 
+servidores, de forma que cada bit de datos pueda ser encontrado 
+en múltiples lugares. Esta réplica puede realizarse de dos maneras:
+Réplica maestro-esclavo en la que un servidor gestiona la escritura
+ de la copia autorizada mientras que los esclavos se sincronizan con
+ este servidor maestro y sólo gestionan las lecturas.
+Réplica peer-to-peer en la que se permiten escrituras a cualquier nodo 
+y ellos se coordinan entre sí para sincronizar sus copias de los datos
 \end{enumerate}
-\item \textbf{Tolerancia a fallos y Redundancia: } Pese a lo que cualquiera pueda pensar cuando se habla de NoSQL, no todas las tecnologías existentes bajo este paraguas usan el mismo modelo de datos ya que, al ser sistemas altamente especializados, la idoneidad particular de una base de datos NoSQL dependerá del problema a resolver. Así a todo, podemos agrupar los diferentes modelos de datos usados en sistemas NoSQL en cuatro grandes categorías:
+\item \textbf{Tolerancia a fallos y Redundancia: } Pese a lo que 
+cualquiera pueda pensar cuando se habla de NoSQL, no todas las 
+tecnologías existentes bajo este paraguas usan el mismo modelo de
+ datos ya que, al ser sistemas altamente especializados, la idoneidad 
+particular de una base de datos NoSQL dependerá del problema
+ a resolver. Así a todo, podemos agrupar los diferentes modelos de
+ datos usados en sistemas NoSQL en cuatro grandes categorías:
 \begin{enumerate}
-\item \textbf{Base de datos de Documentos: } Este tipo de base de datos almacena la información como un documento, usando para habitualmente para ello una estructura simple como JSON, BSON o XML y donde se utiliza una clave única para cada registro. Este tipo de implementación permite, además de realizar búsquedas por clave–valor, realizar consultas más avanzadas sobre el contenido del documento. Son las bases de datos NoSQL más versátiles.
-\item \textbf{Almacenamiento Clave-Valor:} Son el modelo de base de datos NoSQL más popular, además de ser la más sencilla en cuanto a funcionalidad. En este tipo de sistema, cada elemento está identificado por una clave única, lo que permite la recuperación de la información de forma muy rápida, información que suele almacenarse como un objeto binario. Se caracterizan por ser muy eficientes tanto para las lecturas como para las escrituras. 
-\item \textbf{Bases de datos de grafos:} Usadas para aquellos datos cuyas relaciones se pueden representar adecuadamente mediante un grafo. Los datos se almacenan en estructuras grafo con nodos (entidades), propiedades (información entre entidades) y líneas (conexiones entre las entidades). 
-\item \textbf{Base de datos Columnar (o Columna ancha):} En vez de tablas, en las bases de datos de columna tenemos familias de columnas que, son los contenedores de las filas. A diferencia de los RDBMS, no necesita conocer de antemano todas las columnas, cada fila no tiene por qué tener el mismo número de columnas. Este tipo de bases de datos se adecuan mejor a operaciones analíticas sobre grandes conjuntos de datos.
+\item \textbf{Base de datos de Documentos: } Este tipo de base 
+de datos almacena la información como un documento, usando para
+ habitualmente para ello una estructura simple como JSON, BSON o XML
+ y donde se utiliza una clave única para cada registro. Este tipo de
+ implementación permite, además de realizar búsquedas por clave–valor,
+ realizar consultas más avanzadas sobre el contenido del documento.
+ Son las bases de datos NoSQL más versátiles.
+\item \textbf{Almacenamiento Clave-Valor:} Son el modelo de base de
+ datos NoSQL más popular, además de ser la más sencilla en cuanto a 
+funcionalidad. En este tipo de sistema, cada elemento está identificado 
+por una clave única, lo que permite la recuperación de la información de
+ forma muy rápida, información que suele almacenarse como un objeto
+ binario. Se caracterizan por ser muy eficientes tanto para las lecturas
+ como para las escrituras. 
+\item \textbf{Bases de datos de grafos:} Usadas para aquellos datos 
+cuyas relaciones se pueden representar adecuadamente mediante 
+un grafo. Los datos se almacenan en estructuras grafo con nodos 
+(entidades), propiedades (información entre entidades) y líneas (conexiones
+ entre las entidades). 
+\item \textbf{Base de datos Columnar (o Columna ancha):} En vez de
+ tablas, en las bases de datos de columna tenemos familias de columnas
+ que, son los contenedores de las filas. A diferencia de los RDBMS, 
+no necesita conocer de antemano todas las columnas, cada fila no tiene 
+por qué tener el mismo número de columnas. Este tipo de bases de datos
+ se adecuan mejor a operaciones analíticas sobre grandes conjuntos de datos.
 \end{enumerate}
 
 \end{enumerate}
-Pese a todas las opciones proporcionadas por el auge de las bases de datos NoSQL, esto no significa la desaparición de las bases de datos de RDBMS ya que son tecnologías complementarias. Estamos entrando en una era de persistencia políglota, una técnica que utiliza diferentes tecnologías de almacenamiento de datos para manejar las diversas necesidades de almacenamiento de datos. Hemos elegido la implementación de una base de datos NoSQL para nuestra aplicación ya que para nosotros el rendimiento es más importante que preservar el modelo relacional. Además de la posibilidad de escalar de forma sencilla, hemos tenido en cuenta otros criterios: 
+Pese a todas las opciones proporcionadas por el auge de las bases
+ de datos NoSQL, esto no significa la desaparición de las bases de 
+datos de RDBMS ya que son tecnologías complementarias. Estamos
+ entrando en una era de persistencia políglota, una técnica que utiliza 
+diferentes tecnologías de almacenamiento de datos para manejar las 
+diversas necesidades de almacenamiento de datos. Hemos elegido la 
+implementación de una base de datos NoSQL para nuestra aplicación
+ ya que para nosotros el rendimiento es más importante que preservar 
+el modelo relacional. Además de la posibilidad de escalar de forma sencilla, 
+hemos tenido en cuenta otros criterios: 
 \begin{enumerate}
 \item El volumen de lecturas y escrituras
 \item Tolerancia por datos inconsistentes en réplicas
-\item La naturaleza de las relaciones entre entidades y cómo eso afecta los patrones de consulta
+\item La naturaleza de las relaciones entre entidades y cómo eso afecta
+ los patrones de consulta
 \item Disponibilidad y requisitos de recuperación de desastres
 \item La necesidad de flexibilidad en los modelos de datos
 \item Requisitos de latencia
 \end{enumerate}
 \subsubsection{Bases de datos no relacionales NoSQL}
-Nos vamos a decantar por un modelo Almacenamiento Clave-Valor y vamos a almacenar una lista de estructuras JSON.
+Nos vamos a decantar por un modelo Almacenamiento Clave-Valor
+ y vamos a almacenar una lista de estructuras JSON.
 \\
-Este tipo de bases de datos Clave-Valor se utilizan en una amplia gama de aplicaciones, como las siguientes:
+Este tipo de bases de datos Clave-Valor se utilizan en una amplia gama
+ de aplicaciones, como las siguientes:
 \begin{enumerate}
-\item Almacenamiento en caché de datos de bases de datos relacionales para mejorar el rendimiento
-\item Seguimiento de atributos transitorios en una aplicación web, como un carrito de compras
-\item Almacenamiento de configuración e información de datos de usuario para aplicaciones móviles
+\item Almacenamiento en caché de datos de bases de datos 
+relacionales para mejorar el rendimiento
+\item Seguimiento de atributos transitorios en una aplicación web, 
+como un carrito de compras
+\item Almacenamiento de configuración e información de datos de usuario
+ para aplicaciones móviles
 \item Almacenar objetos grandes, como imágenes y archivos de audio
 \end{enumerate}
-\footnote{Fuente: Oracle \cite{DEFINICIONNOSQL} y NoSQL for mere mortals \cite{NOSQL}}
+\footnote{Fuente: Oracle~\cite{DEFINICIONNOSQL} y NoSQL for mere mortals~\cite{NOSQL}}
 

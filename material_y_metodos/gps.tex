@@ -2,26 +2,71 @@
 Utilizaremos el sistema GPS para localizar el dispositivo móvil en el agua.
 
 A continuación describiremos brevemente en que se base este sistema.
-\\
 
-El Sistema de Posicionamiento Global (en inglés, GPS; Global Positioning System), y originalmente Navstar GPS, es un sistema que permite determinar en toda la Tierra la posición de un objeto (una persona, un vehículo) con una precisión de hasta centímetros (si se utiliza GPS diferencial), aunque lo habitual son unos pocos metros de precisión. El sistema fue desarrollado, instalado y empleado por el Departamento de Defensa de los Estados Unidos. Para determinar las posiciones en el globo, el sistema GPS se sirve de 24 a 32 satélites y utiliza la trilateración.
+El Sistema de Posicionamiento Global (en inglés, GPS; Global Positioning System)
+, y originalmente Navstar GPS, es un sistema que permite determinar
+ en toda la Tierra la posición de un objeto (una persona, un vehículo)
+ con una precisión de hasta centímetros (si se utiliza GPS diferencial), 
+aunque lo habitual son unos pocos metros de precisión. El sistema fue
+ desarrollado, instalado y empleado por el Departamento de Defensa
+ de los Estados Unidos. Para determinar las posiciones en el globo, 
+el sistema GPS se sirve de 24 a 32 satélites y utiliza la trilateración.
 
-El GPS funciona mediante una red de como mínimo 24 satélites en órbita sobre el planeta Tierra, a 20 180 km de altura, con trayectorias sincronizadas para cubrir toda la superficie de la Tierra. Cuando se desea determinar la posición tridimensional, el receptor que se utiliza para ello localiza automáticamente como mínimo cuatro satélites de la red, de los que recibe unas señales indicando la identificación y hora del reloj de cada uno de ellos, además de información sobre la constelación. Con base en estas señales, el aparato sincroniza el reloj del GPS y calcula el tiempo que tardan en llegar las señales al equipo, y de tal modo mide la distancia al satélite mediante el método de trilateración inversa, el cual se basa en determinar la distancia de cada satélite al punto de medición. Conocidas las distancias, se determina fácilmente la propia posición relativa respecto a los satélites. Conociendo además las coordenadas o posición de cada uno de ellos por la señal que emiten, se obtiene la posición absoluta o coordenadas reales del punto de medición. También se consigue una gran exactitud en el reloj del GPS, similar a la de los relojes atómicos que lleva a bordo cada uno de los satélites.
+El GPS funciona mediante una red de como mínimo 24 satélites en
+ órbita sobre el planeta Tierra, a 20 180 km de altura, con trayectorias 
+sincronizadas para cubrir toda la superficie de la Tierra. Cuando
+ se desea determinar la posición tridimensional, el receptor que se 
+utiliza para ello localiza automáticamente como mínimo cuatro satélites 
+de la red, de los que recibe unas señales indicando la identificación 
+y hora del reloj de cada uno de ellos, además de información sobre 
+la constelación. Con base en estas señales, el aparato sincroniza el 
+reloj del GPS y calcula el tiempo que tardan en llegar las señales al 
+equipo, y de tal modo mide la distancia al satélite mediante el método 
+de trilateración inversa, el cual se basa en determinar la distancia
+ de cada satélite al punto de medición. Conocidas las distancias, 
+se determina fácilmente la propia posición relativa respecto a los
+ satélites. Conociendo además las coordenadas o posición de cada
+ uno de ellos por la señal que emiten, se obtiene la posición absoluta
+ o coordenadas reales del punto de medición. También se consigue
+ una gran exactitud en el reloj del GPS, similar a la de los relojes
+ atómicos que lleva a bordo cada uno de los satélites.
 
 \subsubsection{Funcionamiento}
 
-La información que es útil al receptor GPS para determinar su posición se llama efemérides. En este caso cada satélite emite sus propias efemérides, en la que se incluye la salud del satélite,su posición en el espacio, su hora atómica, información doppler, etc.
+La información que es útil al receptor GPS para determinar su
+ posición se llama efemérides. En este caso cada satélite emite
+ sus propias efemérides, en la que se incluye la salud del satélite, 
+su posición en el espacio, su hora atómica, información doppler, etc.
 
 Mediante la trilateración se determina la posición del receptor:
 \begin{itemize}
 
-\item Cada satélite indica que el receptor se encuentra en un punto en la superficie de la esfera, con centro en el propio satélite y de radio la distancia total hasta el receptor.
-\item Obteniendo información de dos satélites queda determinada una circunferencia que resulta cuando se intersecan las dos esferas en algún punto de la cual se encuentra el receptor.
-\item Teniendo información de un tercer satélite, se elimina el inconveniente de la falta de sincronización entre los relojes de los receptores GPS y los relojes de los satélites. Y es en este momento cuando el receptor GPS puede determinar una posición 3D exacta (latitud, longitud y altitud).
+\item Cada satélite indica que el receptor se encuentra en un punto
+ en la superficie de la esfera, con centro en el propio satélite y 
+de radio la distancia total hasta el receptor.
+\item Obteniendo información de dos satélites queda determinada
+ una circunferencia que resulta cuando se intersecan las dos esferas 
+en algún punto de la cual se encuentra el receptor.
+\item Teniendo información de un tercer satélite, se elimina el 
+inconveniente de la falta de sincronización entre los relojes de los
+ receptores GPS y los relojes de los satélites. Y es en este momento 
+cuando el receptor GPS puede determinar una posición 3D exacta
+ (latitud, longitud y altitud).
 \end{itemize}
 \subsubsection{Integración con telefonía móvil}
-Actualmente dentro del mercado de la telefonía móvil la tendencia es la de integrar, por parte de los fabricantes, la tecnología GPS dentro de sus dispositivos. El uso y masificación del GPS está particularmente extendido en los teléfonos móviles smartphone, lo que ha hecho surgir todo un ecosistema de software para este tipo de dispositivos, así como nuevos modelos de negocios que van desde el uso del terminal móvil para la navegación tradicional punto-a-punto hasta la prestación de los llamados Servicios Basados en la Localización (LBS).
+Actualmente dentro del mercado de la telefonía móvil la tendencia 
+es la de integrar, por parte de los fabricantes, la tecnología GPS 
+dentro de sus dispositivos. El uso y masificación del GPS está 
+particularmente extendido en los teléfonos móviles smartphone, lo que
+ ha hecho surgir todo un ecosistema de software para este tipo de
+ dispositivos, así como nuevos modelos de negocios que van desde el
+ uso del terminal móvil para la navegación tradicional punto-a-punto 
+hasta la prestación de los llamados Servicios Basados en la Localización (LBS).
 
-Un buen ejemplo del uso del GPS en la telefonía móvil son las aplicaciones que permiten conocer la posición de amigos cercanos sobre un mapa base. Para ello basta con tener la aplicación respectiva para la plataforma deseada (Android, Bada, IOS, WP, Symbian) y permitir ser localizado por otros.
+Un buen ejemplo del uso del GPS en la telefonía móvil son las 
+aplicaciones que permiten conocer la posición de amigos cercanos
+sobre un mapa base. Para ello basta con tener la aplicación
+ respectiva para la plataforma deseada (Android, Bada, IOS, WP, Symbian)
+ y permitir ser localizado por otros.
 
-\footnote{Fuente : GPS \cite{GPS}}
+\footnote{Fuente : GPS~\cite{GPS}}

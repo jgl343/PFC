@@ -1,20 +1,31 @@
 \subsection{OpenWeather Weather API}
 
-OpenWeather nos ofrece una potente API con la que obtendremos el pronóstico meteorológico diario. Con una simple llamada como la siguiente:
+OpenWeather nos ofrece una potente API con la que obtendremos
+ el pronóstico meteorológico diario. Con una simple llamada como la 
+siguiente:
 \begin{itemize}
 
 
 \item  \url{http://api.openweathermap.org/data/2.5/weather?lat=36.7311957&lon=-2.854627&appid=d488064b89a68d822fd0f952df6b7c83}
 \end{itemize}
-Podremos obtener la información necesaria acerca de las condiciones meteorológicas. Los parámetros que deberemos rellenar son los siguientes:
+Podremos obtener la información necesaria acerca de las condiciones meteorológicas.
+ Los parámetros que deberemos rellenar son los siguientes:
 
 \begin{enumerate}
-\item \textbf{lat:} La latitud será la coordenada geográfica proporcionada por el sistema GPS de nuestro dispositivo móvil, nos servirá para identificar la posición. En el ejemplo es \emph{36.7311957}.
-\item \textbf{lon:} La longitud será la Coordenada geográfica proporcionada por el sistema GPS de nuestro dispositivo móvil, nos servirá para identificar la posición. En el ejemplo es \emph{-2.854627}.
-\item \textbf{appid:} Nuestra API Key, necesaria para autentificar la llamada, nos la proporcionan al crearnos una cuenta en OpenWeatherMap \cite{OPENWEATHER}. En el ejemplo es \emph{d488064b89a68d822fd0f952df6b7c83}.
+\item \textbf{lat:} La latitud será la coordenada geográfica proporcionada 
+por el sistema GPS de nuestro dispositivo móvil, nos servirá para identificar
+ la posición. En el ejemplo es \emph{36.7311957}.
+\item \textbf{lon:} La longitud será la Coordenada geográfica 
+proporcionada por el sistema GPS de nuestro dispositivo móvil, 
+nos servirá para identificar la posición. En el ejemplo es \emph{-2.854627}.
+\item \textbf{appid:} Nuestra API Key, necesaria para autentificar
+ la llamada, nos la proporcionan al crearnos una cuenta en 
+OpenWeatherMap~\cite{OPENWEATHER}. 
+En el ejemplo es \emph{d488064b89a68d822fd0f952df6b7c83}.
 \end{enumerate}
 
-La respuesta que recibiremos al hacer la llamada del ejemplo, será un mensaje JSON, con la siguiente estructura:
+La respuesta que recibiremos al hacer la llamada del ejemplo,
+ será un mensaje JSON, con la siguiente estructura:
 \\
 \lstset{
     string=[s]{"}{"},
@@ -81,8 +92,8 @@ A continuación vamos a describir cada uno de los atributos de la respuesta:
 \item \textbf{weather:} Códigos de la información meteorológica.
 \begin{enumerate}
 \item id: Identificador del clima.
-\item main: Grupo de condición meteorológica (Lluvia, Nieve, Despejado, etc.)
-\item description: Condición meteorológica dentro de su grupo
+\item main: Grupo de condición meteorológica (Lluvia, Nieve, Despejado, etc.).
+\item description: Condición meteorológica dentro de su grupo.
 \item  icon. Icono del clima.
 \end{enumerate}
 \item  \textbf{base:} Párametro interno.
@@ -109,7 +120,7 @@ A continuación vamos a describir cada uno de los atributos de la respuesta:
 \item type: Parámetro interno.
 \item id: Parámetro interno.
 \item message: Parámetro interno.
-\item country: Código del país (GB, JP etc.)
+\item country: Código del país (GB, JP etc.).
 \item sunrise: Hora del amanecer, unix, UTC.
 \item sunset: Hora del anochecer, unix, UTC.
 \end{enumerate}
@@ -118,6 +129,9 @@ A continuación vamos a describir cada uno de los atributos de la respuesta:
 \item  \textbf{cod:} Parámetro interno.
 \end{enumerate}
 
-Tendremos especialmente en cuenta los parámetros de la velocidad y la dirección del viento, ya que serán los que utilicemos para comprobar si el usuario de la aplicación está a la deriva y realizar la alerta de rescate.
+Tendremos especialmente en cuenta los parámetros de la
+ velocidad y la dirección del viento, ya que serán los que utilicemos
+ para comprobar si el usuario de la aplicación está a la deriva y
+ realizar la alerta de rescate.
 
-\footnote{Fuente: Open Weather \cite{OPENWEATHER}}
+\footnote{Fuente: Open Weather~\cite{OPENWEATHER}.}
