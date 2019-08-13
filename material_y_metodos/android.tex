@@ -48,7 +48,7 @@ propios a las capas de niveles superiores, tal y como podemos ver
  en la siguiente figura.
 \begin{figure}[h]
 \includegraphics[scale=0.5]{arquitectura_android.png} 
-\floatfoot{Figura 3. Arquitectura del sistema Android}
+\caption{Arquitectura del sistema Android.}
 \end{figure}
 
 
@@ -102,7 +102,7 @@ Si llevan asociada alguna acción, en Android denominada Intent,
  utilizadas por Android. Estas han sido escritas utilizando C/C++ y
  proporcionan a Android la mayor parte de sus capacidades 
 más características. Junto al núcleo basado en Linux, estas librerías 
-constituyen el corazón de Android. [7]
+constituyen el corazón de Android.
 Entre las librerías más importantes ubicadas aquí, se pueden
  encontrar las siguientes:
 \begin{enumerate}
@@ -154,7 +154,7 @@ Existen cinco componentes importantes en las aplicaciones Android
 
 \begin{figure}[h]
 \includegraphics[scale=0.50]{ciclo_de_vida.png} 
-\floatfoot{Figura 1. Ciclo de vida de una aplicación Android}
+\caption{Ciclo de vida de una aplicación Android.}
 \end{figure}
 \begin{enumerate}
 
@@ -202,7 +202,7 @@ un reinicio del dispositivo, aviso de batería baja o al conectar el
  el recibir ese broadcast y que nuestra aplicación haga alguna acción 
 determinada en ese momento.
 \end{enumerate}
-	\subsubsection{Estructura de una aplicación Android}
+\subsubsection{Estructura de una aplicación Android}
 En este apartado vamos a explicar la estructura de los componentes
  que tiene una aplicación Android.
 \begin{enumerate}
@@ -243,21 +243,21 @@ versiones en Android.
  nuestra aplicación.
 \item targetSdkVersion: Es la versión de la API a la que se dirige
  principalmente la aplicación.
- \end{enumerate}
+\end{enumerate}
 La etiqueta <uses-permission> se utiliza para dar permisos a la aplicación.
- En nuestro caso, hemos configurado para que nuestra aplicación
- pueda acceder a internet, pueda acceder al GPS y pueda escribir 
+En nuestro caso, hemos configurado para que nuestra aplicación
+pueda acceder a internet, pueda acceder al GPS y pueda escribir 
 en un almacenamiento externo.
  
 Dentro de la etiqueta <application> se introducen todos los 
 elementos que componen la aplicación.
 \begin{enumerate}
-\item 	allowBackup: Con el valor "true" se le permite al sistema 
+\item allowBackup: Con el valor "true" se le permite al sistema 
 hacer copia de seguridad de la aplicación y del contenido.
-\item  Icon: Es el icono de la aplicación.
+\item Icon: Es el icono de la aplicación.
 \item Label: Es el nombre de la aplicación.
 \item Theme: Es el estilo de la aplicación.
- \end{enumerate}
+\end{enumerate}
 En la etiqueta <activity> es donde se dan de alta todas las 
 actividades que vamos a tener en la aplicación.
 \begin{enumerate}
