@@ -2,7 +2,7 @@
 Utilizaremos el sistema operativo Android como entorno para implementar 
 nuestra aplicación.
 Android es un sistema operativo cuyo núcleo está basado en Linux,
- sistema libre, gratuito y multiplataforma.El sistema operativo fue 
+ sistema libre, gratuito y multiplataforma. El sistema operativo fue 
 desarrollado en Octubre de 2003 por Android Inc., y posteriormente
  comprado por Google en 2005.
 Aunque principalmente fue diseñado para dispositivos móviles con
@@ -21,12 +21,12 @@ Esta máquina virtual proporciona una serie de mejoras respecto a la jvm habitua
 \item	Mejora el recolector de basura.
 \item	Mejoras para el desarrollo y la depuración:
 \begin{enumerate}
-\item	Soporta perfiles de pruebas
+\item	Soporta perfiles de pruebas.
 \item	Añade nuevas características para depurar, particularmente en el monitor
- de recursos y el recolector de basura
+ de recursos y el recolector de basura.
 \item	Mejoras en la descripción de los errores, añadiendo detalles 
 como por ejemplo, información relativa a la actividad que intentaba
- realizar antes de un error de tipo java.lang.NullPointerException
+ realizar antes de un error de tipo java.lang.NullPointerException.
 \end{enumerate}
 \end{enumerate}
 
@@ -63,7 +63,7 @@ Todas estas aplicaciones utilizan los servicios, las API y
 Toda aplicación que se desarrolle para Android, ya sean las propias 
 del dispositivo, las desarrolladas por Google o terceras compañías,
  o incluso las que el propio usuario cree, utilizan el mismo conjunto
- de API y el mismo "framework", representado por este nivel. 
+ de API y el mismo ``framework'', representado por este nivel. 
 Entre las API más importantes ubicadas aquí, se pueden encontrar las siguientes:
 \begin{enumerate}
 \item	Activity Manager: Conjunto de API que gestiona el ciclo de vida de
@@ -76,7 +76,7 @@ esta API la información de contactos, agenda, mensajes, etc.
 será accesible para otras aplicaciones.
 \item	View System: Proporciona un gran número de elementos para poder
  construir interfaces de usuario (GUI), como listas, mosaicos, 
-botones, "check-boxes", tamaño de ventanas, control de las
+botones, ``check-boxes'', tamaño de ventanas, control de las
  interfaces mediante teclado, etc. Incluye también algunas vistas
  estándar para las funcionalidades más frecuentes.
 \item	Notification Manager: Mediante el cual las aplicaciones,
@@ -87,7 +87,7 @@ Si llevan asociada alguna acción, en Android denominada Intent,
 (por ejemplo, atender una llamada recibida) ésta se activa mediante un simple clic.
 \item	Package Manager: Permite obtener información sobre los
  paquetes instalados en el dispositivo Android, además de
- gestionar la instalación de nuevos paquetes 
+ gestionar la instalación de nuevos paquetes.
 \item	Telephone Manager: Incluye todas las API vinculadas
  a las funcionalidades propias del teléfono (llamadas, mensajes, etc.).
 \item	Resource Manager: Permite gestionar los elementos
@@ -150,7 +150,7 @@ pueda ser utilizado desde Android es crear las librerías de control
 en el propio Android. 
 \end{enumerate}
 \subsubsection{Componentes Android}
-Existen cinco componentes importantes en las aplicaciones Android
+Existen cinco componentes importantes en las aplicaciones Android:
 
 \begin{figure}[h]
 \includegraphics[scale=0.50]{ciclo_de_vida.png} 
@@ -162,7 +162,7 @@ Existen cinco componentes importantes en las aplicaciones Android
  las pantallas que nosotros mostramos en la ejecución de nuestra 
 aplicación. Cada actividad puede encontrarse en diferentes estados:
 \begin{enumerate}
-\item	onCreate: Representa el momento en que se crea la actividad
+\item	onCreate: Representa el momento en que se crea la actividad.
 \item	onStart: Es donde la actividad se muestra en pantalla.
 \item	onRestart: Cuando una aplicación estaba parada y la volvemos a activar.
 \item	onResume: La actividad va a empezar a responder a la interacción del usuario.
@@ -177,7 +177,7 @@ aplicación. Cada actividad puede encontrarse en diferentes estados:
 Una actividad consta de dos partes:
 \begin{enumerate}
 \item	La parte lógica: se trata de un archivo java donde se manipula,
- interactúa y coloca el código de la actividad
+ interactúa y coloca el código de la actividad.
 \item	La parte gráfica: Se trata de un XML donde se introducen los
  elementos que formarán la estructura de la pantalla.
 \end{enumerate}
@@ -195,7 +195,7 @@ aplicación de SMS, o el calendario/agenda.
 servicios, o enviar eventos a múltiples destinatarios. Estos objetos 
 también se pueden utilizar para realizar paso de mensajes entre 
 actividades de la misma aplicación o entre distintas aplicaciones.
-Broadcast Receiver: Un broadcast es un mensaje que cualquiera 
+\item Broadcast Receiver: Un broadcast es un mensaje que cualquiera 
 aplicación puede recibir. Estos mensajes broadcast pueden ser 
 un reinicio del dispositivo, aviso de batería baja o al conectar el
  móvil a un cargador. Con este componente se puede configurar
@@ -208,7 +208,7 @@ En este apartado vamos a explicar la estructura de los componentes
 \begin{enumerate}
 \item	Src: En esta carpeta se introducen los archivos java 
 que componen nuestra aplicación.
-\item	Gen: Dentro de esta carpeta hay un archivo llamado “R.java” 
+\item	Gen: Dentro de esta carpeta hay un archivo llamado ``R.java'' 
 donde se guardan los identificadores de todos los componentes
  utilizados en la aplicación.
 \item	Libs: Se encuentran librerías externas que necesita el proyecto.
@@ -217,11 +217,11 @@ donde se guardan los identificadores de todos los componentes
 \item	Res/drawable: En esta carpeta se guardan las imágenes 
 que vamos a utilizar en nuestra aplicación.
 \item	Res/layout: Carpeta donde se guardan los XML de las actividades.
-\item	Res/values: Carpeta donde se guarda el archivo “strings.xml”,
+\item	Res/values: Carpeta donde se guarda el archivo ``strings.xml'',
  el cual almacena las cadenas de texto que utilizaremos en la aplicación. 
 AndroidManifest.xml: Este archivo es el más importante de la aplicación
- y lo vamos a describir con más detalle en el siguiente apartado.
-	Android Manifest
+ y por eso le vamos a dedicar un pequeño apartado para profundizar más en él.
+\subsubsection{Android Manifest}
 Éste archivo se considera el más importante de la aplicación ya que es
  donde se declaran todas las actividades de la aplicación, los permisos,
  versiones del SDK que usamos, etc.
@@ -232,8 +232,8 @@ La etiqueta principal es <manifest> y tiene varios atributos:
 \begin{enumerate}
 \item[Xmlns]: lo coloca Eclipse por defecto.
 \item[Package]: Hace referencia al nombre del paquete de la aplicación.
-\item[VersionCode]: Es el número de versión del código de la aplicación
-\item[VersionName]: También es el número de la versión
+\item[VersionCode]: Es el número de versión del código de la aplicación.
+\item[VersionName]: También es el número de la versión.
  \end{enumerate}
  
 La etiqueta SDK se configura para saber la compatibilidad de las 
@@ -244,7 +244,7 @@ versiones en Android.
 \item targetSdkVersion: Es la versión de la API a la que se dirige
  principalmente la aplicación.
 \end{enumerate}
-La etiqueta <uses-permission> se utiliza para dar permisos a la aplicación.
+La etiqueta <uses-permission>~se utiliza para dar permisos a la aplicación.
 En nuestro caso, hemos configurado para que nuestra aplicación
 pueda acceder a internet, pueda acceder al GPS y pueda escribir 
 en un almacenamiento externo.
@@ -252,7 +252,7 @@ en un almacenamiento externo.
 Dentro de la etiqueta <application> se introducen todos los 
 elementos que componen la aplicación.
 \begin{enumerate}
-\item allowBackup: Con el valor "true" se le permite al sistema 
+\item allowBackup: Con el valor ``true'' se le permite al sistema 
 hacer copia de seguridad de la aplicación y del contenido.
 \item Icon: Es el icono de la aplicación.
 \item Label: Es el nombre de la aplicación.

@@ -30,23 +30,23 @@ Las características comunes entre todas las implementaciones de
  bases de datos NoSQL suelen ser las siguientes:
 \begin{enumerate}
 \item \textbf{Consistencia Eventual:} A diferencia de las bases 
-de datos relacionales tradicionales, en la mayoría de sistemas
- NoSQL, no se implementan mecanismos rígidos de consistencia 
-que garanticen que cualquier cambio llevado a cabo en el sistema
- distribuido sea visto, al mismo tiempo, por todos los nodos y
- asegurando, también, la no violación de posibles restricciones 
-de integridad de los datos u otras reglas definidas. En su lugar
- y para obtener un mayor rendimiento, se ofrece el concepto 
-de "consistencia eventual", en el que los cambios realizados
- "con el tiempo" serán propagados a todos los nodos por lo que,
- una consulta podría no devolver los últimos datos disponibles
- o proporcionar datos inexactos, problema conocido como
- lecturas sucias u obsoletas.
-Asimismo, en algunos sistemas NoSQL se pueden presentar
- perdidas de datos en escritura. Esto se conoce también como 
-BASE (Basically Available Soft-state Eventual Consistency), 
-en contraposición a ACID (Atomicity, Consistency, Isolation, Durability), 
-su analogía en las bases de datos relacionales.
+de datos relacionales tradicionales, en la mayoría de sistemas NoSQL,
+ no se implementan mecanismos rígidos de consistencia que garanticen
+ que cualquier cambio llevado a cabo en el sistema distribuido sea
+ visto, al mismo tiempo, por todos los nodos y asegurando, también, la
+ no violación de posibles restricciones de integridad de los datos u
+ otras reglas definidas. En su lugar y para obtener un mayor
+ rendimiento, se ofrece el concepto de ``consistencia eventual'', en
+ el que los cambios realizados ``con el tiempo'' serán propagados a
+ todos los nodos por lo que, una consulta podría no devolver los
+ últimos datos disponibles o proporcionar datos inexactos, problema
+ conocido como lecturas sucias u obsoletas.  Asimismo, en algunos
+ sistemas NoSQL\footnote{Fuente: Oracle~\cite{DEFINICIONNOSQL} y NoSQL
+ for mere mortals~\cite{NOSQL}} se pueden presentar perdidas de datos
+ en escritura. Esto se conoce también como BASE (Basically Available
+ Soft-state Eventual Consistency), en contraposición a ACID
+ (Atomicity, Consistency, Isolation, Durability), su analogía en las
+ bases de datos relacionales.
 \item \textbf{Flexibilidad en el esquema:} En la mayoría de
  base de datos NoSQL, los esquemas de datos son dinámicos; 
 es decir, a diferencia de las bases de datos relacionales en las que,
@@ -69,7 +69,7 @@ de un blog (título, cuerpo de texto, autor, etc) junto a los comentarios
 distribuyen, entre los diferentes nodos que componen el sistema. 
 Hay dos estilos de distribución de datos:
 \begin{enumerate}
-\item \textbf{Particionado (ó Sharding):} El particionado distribuye 
+\item \textbf{Particionado (Sharding):} El particionado distribuye 
 los datos entre múltiples servidores de forma que, cada servidor,
  actúe como única fuente de un subconjunto de datos. Normalmente, 
 a la hora de realizar esta distribución, se utilizan mecanismos de tablas
@@ -81,7 +81,7 @@ Réplica maestro-esclavo en la que un servidor gestiona la escritura
  de la copia autorizada mientras que los esclavos se sincronizan con
  este servidor maestro y sólo gestionan las lecturas.
 Réplica peer-to-peer en la que se permiten escrituras a cualquier nodo 
-y ellos se coordinan entre sí para sincronizar sus copias de los datos
+y ellos se coordinan entre sí para sincronizar sus copias de los datos.
 \end{enumerate}
 \item \textbf{Tolerancia a fallos y Redundancia: } Pese a lo que 
 cualquiera pueda pensar cuando se habla de NoSQL, no todas las 
@@ -95,7 +95,7 @@ particular de una base de datos NoSQL dependerá del problema
 de datos almacena la información como un documento, usando para
  habitualmente para ello una estructura simple como JSON, BSON o XML
  y donde se utiliza una clave única para cada registro. Este tipo de
- implementación permite, además de realizar búsquedas por clave–valor,
+ implementación permite, además de realizar búsquedas por clave-valor,
  realizar consultas más avanzadas sobre el contenido del documento.
  Son las bases de datos NoSQL más versátiles.
 \item \textbf{Almacenamiento Clave-Valor:} Son el modelo de base de
@@ -130,13 +130,13 @@ implementación de una base de datos NoSQL para nuestra aplicación
 el modelo relacional. Además de la posibilidad de escalar de forma sencilla, 
 hemos tenido en cuenta otros criterios: 
 \begin{enumerate}
-\item El volumen de lecturas y escrituras
-\item Tolerancia por datos inconsistentes en réplicas
+\item El volumen de lecturas y escrituras.
+\item Tolerancia por datos inconsistentes en réplicas.
 \item La naturaleza de las relaciones entre entidades y cómo eso afecta
- los patrones de consulta
-\item Disponibilidad y requisitos de recuperación de desastres
-\item La necesidad de flexibilidad en los modelos de datos
-\item Requisitos de latencia
+ los patrones de consulta.
+\item Disponibilidad y requisitos de recuperación de desastres.
+\item La necesidad de flexibilidad en los modelos de datos.
+\item Requisitos de latencia.
 \end{enumerate}
 \subsubsection{Bases de datos no relacionales NoSQL}
 Nos vamos a decantar por un modelo Almacenamiento Clave-Valor
@@ -146,12 +146,11 @@ Este tipo de bases de datos Clave-Valor se utilizan en una amplia gama
  de aplicaciones, como las siguientes:
 \begin{enumerate}
 \item Almacenamiento en caché de datos de bases de datos 
-relacionales para mejorar el rendimiento
+relacionales para mejorar el rendimiento.
 \item Seguimiento de atributos transitorios en una aplicación web, 
-como un carrito de compras
+como un carrito de compras.
 \item Almacenamiento de configuración e información de datos de usuario
- para aplicaciones móviles
-\item Almacenar objetos grandes, como imágenes y archivos de audio
+ para aplicaciones móviles.
+\item Almacenar objetos grandes, como imágenes y archivos de audio.
 \end{enumerate}
-\footnote{Fuente: Oracle~\cite{DEFINICIONNOSQL} y NoSQL for mere mortals~\cite{NOSQL}}
 

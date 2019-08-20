@@ -1,0 +1,307 @@
+diff --git a/material_y_metodos/android.tex b/material_y_metodos/android.tex
+index 44f6ae9..2e82de3 100644
+--- a/material_y_metodos/android.tex
++++ b/material_y_metodos/android.tex
+@@ -2,7 +2,7 @@
+ Utilizaremos el sistema operativo Android como entorno para implementar 
+ nuestra aplicación.
+ Android es un sistema operativo cuyo núcleo está basado en Linux,
+- sistema libre, gratuito y multiplataforma.El sistema operativo fue 
++ sistema libre, gratuito y multiplataforma. El sistema operativo fue 
+ desarrollado en Octubre de 2003 por Android Inc., y posteriormente
+  comprado por Google en 2005.
+ Aunque principalmente fue diseñado para dispositivos móviles con
+@@ -21,12 +21,12 @@ Esta máquina virtual proporciona una serie de mejoras respecto a la jvm habitua
+ \item	Mejora el recolector de basura.
+ \item	Mejoras para el desarrollo y la depuración:
+ \begin{enumerate}
+-\item	Soporta perfiles de pruebas
++\item	Soporta perfiles de pruebas.
+ \item	Añade nuevas características para depurar, particularmente en el monitor
+- de recursos y el recolector de basura
++ de recursos y el recolector de basura.
+ \item	Mejoras en la descripción de los errores, añadiendo detalles 
+ como por ejemplo, información relativa a la actividad que intentaba
+- realizar antes de un error de tipo java.lang.NullPointerException
++ realizar antes de un error de tipo java.lang.NullPointerException.
+ \end{enumerate}
+ \end{enumerate}
+ 
+@@ -63,7 +63,7 @@ Todas estas aplicaciones utilizan los servicios, las API y
+ Toda aplicación que se desarrolle para Android, ya sean las propias 
+ del dispositivo, las desarrolladas por Google o terceras compañías,
+  o incluso las que el propio usuario cree, utilizan el mismo conjunto
+- de API y el mismo "framework", representado por este nivel. 
++ de API y el mismo ``framework'', representado por este nivel. 
+ Entre las API más importantes ubicadas aquí, se pueden encontrar las siguientes:
+ \begin{enumerate}
+ \item	Activity Manager: Conjunto de API que gestiona el ciclo de vida de
+@@ -76,7 +76,7 @@ esta API la información de contactos, agenda, mensajes, etc.
+ será accesible para otras aplicaciones.
+ \item	View System: Proporciona un gran número de elementos para poder
+  construir interfaces de usuario (GUI), como listas, mosaicos, 
+-botones, "check-boxes", tamaño de ventanas, control de las
++botones, ``check-boxes'', tamaño de ventanas, control de las
+  interfaces mediante teclado, etc. Incluye también algunas vistas
+  estándar para las funcionalidades más frecuentes.
+ \item	Notification Manager: Mediante el cual las aplicaciones,
+@@ -87,7 +87,7 @@ Si llevan asociada alguna acción, en Android denominada Intent,
+ (por ejemplo, atender una llamada recibida) ésta se activa mediante un simple clic.
+ \item	Package Manager: Permite obtener información sobre los
+  paquetes instalados en el dispositivo Android, además de
+- gestionar la instalación de nuevos paquetes 
++ gestionar la instalación de nuevos paquetes.
+ \item	Telephone Manager: Incluye todas las API vinculadas
+  a las funcionalidades propias del teléfono (llamadas, mensajes, etc.).
+ \item	Resource Manager: Permite gestionar los elementos
+@@ -150,7 +150,7 @@ pueda ser utilizado desde Android es crear las librerías de control
+ en el propio Android. 
+ \end{enumerate}
+ \subsubsection{Componentes Android}
+-Existen cinco componentes importantes en las aplicaciones Android
++Existen cinco componentes importantes en las aplicaciones Android:
+ 
+ \begin{figure}[h]
+ \includegraphics[scale=0.50]{ciclo_de_vida.png} 
+@@ -177,7 +177,7 @@ aplicación. Cada actividad puede encontrarse en diferentes estados:
+ Una actividad consta de dos partes:
+ \begin{enumerate}
+ \item	La parte lógica: se trata de un archivo java donde se manipula,
+- interactúa y coloca el código de la actividad
++ interactúa y coloca el código de la actividad.
+ \item	La parte gráfica: Se trata de un XML donde se introducen los
+  elementos que formarán la estructura de la pantalla.
+ \end{enumerate}
+@@ -244,7 +244,7 @@ versiones en Android.
+ \item targetSdkVersion: Es la versión de la API a la que se dirige
+  principalmente la aplicación.
+ \end{enumerate}
+-La etiqueta <uses-permission> se utiliza para dar permisos a la aplicación.
++La etiqueta <uses-permission>~se utiliza para dar permisos a la aplicación.
+ En nuestro caso, hemos configurado para que nuestra aplicación
+ pueda acceder a internet, pueda acceder al GPS y pueda escribir 
+ en un almacenamiento externo.
+@@ -252,7 +252,7 @@ en un almacenamiento externo.
+ Dentro de la etiqueta <application> se introducen todos los 
+ elementos que componen la aplicación.
+ \begin{enumerate}
+-\item allowBackup: Con el valor "true" se le permite al sistema 
++\item allowBackup: Con el valor ``true'' se le permite al sistema 
+ hacer copia de seguridad de la aplicación y del contenido.
+ \item Icon: Es el icono de la aplicación.
+ \item Label: Es el nombre de la aplicación.
+@@ -265,4 +265,4 @@ actividades que vamos a tener en la aplicación.
+ \item Label: Es el nombre de la activity.
+ \end{enumerate}
+ <Intent-filter> indica lo que la activity tiene permitido hacer.
+-\end{enumerate}
+\ No newline at end of file
++\end{enumerate}
+diff --git a/material_y_metodos/firebasejobdispatcher.tex b/material_y_metodos/firebasejobdispatcher.tex
+index 2054818..5e26e7d 100644
+--- a/material_y_metodos/firebasejobdispatcher.tex
++++ b/material_y_metodos/firebasejobdispatcher.tex
+@@ -2,9 +2,11 @@
+ 
+ \subsection{WorkManager}
+ \subsubsection{WorkManager API}
+-Para realizar las llamadas a nuestro backend utilizaremos la 
+-API WorkManager, que nos facilitará la programación de tareas
+- asíncronas incluso si la aplicación sale o se reinicia el dispositivo.
++Para realizar las llamadas a nuestro backend utilizaremos la API
++WorkManager, que nos facilitará la programación de tareas asíncronas
++incluso si la aplicación sale o se reinicia el
++dispositivo.\footnote{Fuente: Android
++WorkManager~\cite{ANDROIDWORKMANAGER}}
+ 
+ Es mejor que utilizar un proceso en segundo plano, ya que
+  mantener aplicaciones en segundo plano consume mucha batería
+@@ -38,4 +40,3 @@ En el caso que la resolución de la función nos indique que estamos
+ Una vez terminado este tiempo, si no se ha detenido la ejecución mediante un botón que mostraremos en pantalla, encolaremos la última función, que será la encargada de llamar al 112.
+ 
+ 
+-\footnote{Fuente:Android WorkManager~\cite{ANDROIDWORKMANAGER}}
+\ No newline at end of file
+diff --git a/material_y_metodos/gps.tex b/material_y_metodos/gps.tex
+index 736f668..191e0b4 100644
+--- a/material_y_metodos/gps.tex
++++ b/material_y_metodos/gps.tex
+@@ -1,16 +1,17 @@
+ \subsection{Sistema de posicionamiento global}
+-Utilizaremos el sistema GPS para localizar el dispositivo móvil en el agua.
++Utilizaremos el sistema GPS para localizar el dispositivo móvil en el
++agua. A continuación describiremos brevemente en que se base este
++sistema.
+ 
+-A continuación describiremos brevemente en que se base este sistema.
+-
+-El Sistema de Posicionamiento Global (en inglés, GPS; Global Positioning System)
+-, y originalmente Navstar GPS, es un sistema que permite determinar
+- en toda la Tierra la posición de un objeto (una persona, un vehículo)
+- con una precisión de hasta centímetros (si se utiliza GPS diferencial), 
+-aunque lo habitual son unos pocos metros de precisión. El sistema fue
+- desarrollado, instalado y empleado por el Departamento de Defensa
+- de los Estados Unidos. Para determinar las posiciones en el globo, 
+-el sistema GPS se sirve de 24 a 32 satélites y utiliza la trilateración.
++El Sistema de Posicionamiento Global (en inglés, GPS; Global
++Positioning System), y originalmente Navstar GPS, es un sistema que
++permite determinar en toda la Tierra la posición de un objeto (una
++persona, un vehículo) con una precisión de hasta centímetros (si se
++utiliza GPS diferencial), aunque lo habitual son unos pocos metros de
++precisión. El sistema fue desarrollado, instalado y empleado por el
++Departamento de Defensa de los Estados Unidos. Para determinar las
++posiciones en el globo, el sistema GPS se sirve de 24 a 32 satélites y
++utiliza la trilateración.
+ 
+ El GPS funciona mediante una red de como mínimo 24 satélites en
+  órbita sobre el planeta Tierra, a 20 180 km de altura, con trayectorias 
+@@ -63,10 +64,8 @@ particularmente extendido en los teléfonos móviles smartphone, lo que
+  uso del terminal móvil para la navegación tradicional punto-a-punto 
+ hasta la prestación de los llamados Servicios Basados en la Localización (LBS).
+ 
+-Un buen ejemplo del uso del GPS en la telefonía móvil son las 
+-aplicaciones que permiten conocer la posición de amigos cercanos
+-sobre un mapa base. Para ello basta con tener la aplicación
+- respectiva para la plataforma deseada (Android, Bada, IOS, WP, Symbian)
+- y permitir ser localizado por otros.
+-
+-\footnote{Fuente : GPS~\cite{GPS}}
+\ No newline at end of file
++Un buen ejemplo del uso del GPS en la telefonía móvil son las
++aplicaciones que permiten conocer la posición de amigos cercanos sobre
++un mapa base. Para ello basta con tener la aplicación respectiva para
++la plataforma deseada (Android, Bada, IOS, WP, Symbian) y permitir ser
++localizado por otros.\footnote{Fuente: GPS~\cite{GPS}}
+diff --git a/material_y_metodos/json.tex b/material_y_metodos/json.tex
+index 3fe8130..493ed58 100644
+--- a/material_y_metodos/json.tex
++++ b/material_y_metodos/json.tex
+@@ -19,9 +19,8 @@ tabla hash, lista de claves o un arreglo asociativo.
+ \item Una lista ordenada de valores. En la mayoría de los lenguajes, 
+ esto se implementa como arreglos, vectores, listas o sequencias.
+ \end{enumerate}
+-Estas son estructuras universales; virtualmente todos los lenguajes 
+-de programación las soportan de una forma u otra. Es razonable que
+- un formato de intercambio de datos que es independiente del lenguaje 
+-de programación se base en estas estructuras.
+-
+-\footnote{Fuente :JSON~\cite{JSON}}
+\ No newline at end of file
++Estas son estructuras universales; virtualmente todos los lenguajes de
++programación las soportan de una forma u otra. Es razonable que un
++formato de intercambio de datos que es independiente del lenguaje de
++programación se base en estas estructuras.\footnote{Fuente
++  :JSON~\cite{JSON}}
+diff --git a/material_y_metodos/nosql.tex b/material_y_metodos/nosql.tex
+index d35f13c..b906022 100644
+--- a/material_y_metodos/nosql.tex
++++ b/material_y_metodos/nosql.tex
+@@ -30,23 +30,23 @@ Las características comunes entre todas las implementaciones de
+  bases de datos NoSQL suelen ser las siguientes:
+ \begin{enumerate}
+ \item \textbf{Consistencia Eventual:} A diferencia de las bases 
+-de datos relacionales tradicionales, en la mayoría de sistemas
+- NoSQL, no se implementan mecanismos rígidos de consistencia 
+-que garanticen que cualquier cambio llevado a cabo en el sistema
+- distribuido sea visto, al mismo tiempo, por todos los nodos y
+- asegurando, también, la no violación de posibles restricciones 
+-de integridad de los datos u otras reglas definidas. En su lugar
+- y para obtener un mayor rendimiento, se ofrece el concepto 
+-de "consistencia eventual", en el que los cambios realizados
+- "con el tiempo" serán propagados a todos los nodos por lo que,
+- una consulta podría no devolver los últimos datos disponibles
+- o proporcionar datos inexactos, problema conocido como
+- lecturas sucias u obsoletas.
+-Asimismo, en algunos sistemas NoSQL se pueden presentar
+- perdidas de datos en escritura. Esto se conoce también como 
+-BASE (Basically Available Soft-state Eventual Consistency), 
+-en contraposición a ACID (Atomicity, Consistency, Isolation, Durability), 
+-su analogía en las bases de datos relacionales.
++de datos relacionales tradicionales, en la mayoría de sistemas NoSQL,
++ no se implementan mecanismos rígidos de consistencia que garanticen
++ que cualquier cambio llevado a cabo en el sistema distribuido sea
++ visto, al mismo tiempo, por todos los nodos y asegurando, también, la
++ no violación de posibles restricciones de integridad de los datos u
++ otras reglas definidas. En su lugar y para obtener un mayor
++ rendimiento, se ofrece el concepto de ``consistencia eventual'', en
++ el que los cambios realizados ``con el tiempo'' serán propagados a
++ todos los nodos por lo que, una consulta podría no devolver los
++ últimos datos disponibles o proporcionar datos inexactos, problema
++ conocido como lecturas sucias u obsoletas.  Asimismo, en algunos
++ sistemas NoSQL\footnote{Fuente: Oracle~\cite{DEFINICIONNOSQL} y NoSQL
++ for mere mortals~\cite{NOSQL}} se pueden presentar perdidas de datos
++ en escritura. Esto se conoce también como BASE (Basically Available
++ Soft-state Eventual Consistency), en contraposición a ACID
++ (Atomicity, Consistency, Isolation, Durability), su analogía en las
++ bases de datos relacionales.
+ \item \textbf{Flexibilidad en el esquema:} En la mayoría de
+  base de datos NoSQL, los esquemas de datos son dinámicos; 
+ es decir, a diferencia de las bases de datos relacionales en las que,
+@@ -69,7 +69,7 @@ de un blog (título, cuerpo de texto, autor, etc) junto a los comentarios
+ distribuyen, entre los diferentes nodos que componen el sistema. 
+ Hay dos estilos de distribución de datos:
+ \begin{enumerate}
+-\item \textbf{Particionado (ó Sharding):} El particionado distribuye 
++\item \textbf{Particionado (Sharding):} El particionado distribuye 
+ los datos entre múltiples servidores de forma que, cada servidor,
+  actúe como única fuente de un subconjunto de datos. Normalmente, 
+ a la hora de realizar esta distribución, se utilizan mecanismos de tablas
+@@ -95,7 +95,7 @@ particular de una base de datos NoSQL dependerá del problema
+ de datos almacena la información como un documento, usando para
+  habitualmente para ello una estructura simple como JSON, BSON o XML
+  y donde se utiliza una clave única para cada registro. Este tipo de
+- implementación permite, además de realizar búsquedas por clave–valor,
++ implementación permite, además de realizar búsquedas por clave-valor,
+  realizar consultas más avanzadas sobre el contenido del documento.
+  Son las bases de datos NoSQL más versátiles.
+ \item \textbf{Almacenamiento Clave-Valor:} Son el modelo de base de
+@@ -130,13 +130,13 @@ implementación de una base de datos NoSQL para nuestra aplicación
+ el modelo relacional. Además de la posibilidad de escalar de forma sencilla, 
+ hemos tenido en cuenta otros criterios: 
+ \begin{enumerate}
+-\item El volumen de lecturas y escrituras
+-\item Tolerancia por datos inconsistentes en réplicas
++\item El volumen de lecturas y escrituras.
++\item Tolerancia por datos inconsistentes en réplicas.
+ \item La naturaleza de las relaciones entre entidades y cómo eso afecta
+- los patrones de consulta
+-\item Disponibilidad y requisitos de recuperación de desastres
+-\item La necesidad de flexibilidad en los modelos de datos
+-\item Requisitos de latencia
++ los patrones de consulta.
++\item Disponibilidad y requisitos de recuperación de desastres.
++\item La necesidad de flexibilidad en los modelos de datos.
++\item Requisitos de latencia.
+ \end{enumerate}
+ \subsubsection{Bases de datos no relacionales NoSQL}
+ Nos vamos a decantar por un modelo Almacenamiento Clave-Valor
+@@ -146,12 +146,11 @@ Este tipo de bases de datos Clave-Valor se utilizan en una amplia gama
+  de aplicaciones, como las siguientes:
+ \begin{enumerate}
+ \item Almacenamiento en caché de datos de bases de datos 
+-relacionales para mejorar el rendimiento
++relacionales para mejorar el rendimiento.
+ \item Seguimiento de atributos transitorios en una aplicación web, 
+-como un carrito de compras
++como un carrito de compras.
+ \item Almacenamiento de configuración e información de datos de usuario
+- para aplicaciones móviles
+-\item Almacenar objetos grandes, como imágenes y archivos de audio
++ para aplicaciones móviles.
++\item Almacenar objetos grandes, como imágenes y archivos de audio.
+ \end{enumerate}
+-\footnote{Fuente: Oracle~\cite{DEFINICIONNOSQL} y NoSQL for mere mortals~\cite{NOSQL}}
+ 
+diff --git a/material_y_metodos/openweathermap.tex b/material_y_metodos/openweathermap.tex
+index 34860e7..ff3d574 100644
+--- a/material_y_metodos/openweathermap.tex
++++ b/material_y_metodos/openweathermap.tex
+@@ -132,6 +132,6 @@ A continuación vamos a describir cada uno de los atributos de la respuesta:
+ Tendremos especialmente en cuenta los parámetros de la
+  velocidad y la dirección del viento, ya que serán los que utilicemos
+  para comprobar si el usuario de la aplicación está a la deriva y
+- realizar la alerta de rescate.
++ realizar la alerta de rescate.\footnote{Fuente: Open Weather~\cite{OPENWEATHER}.}
++
+ 
+-\footnote{Fuente: Open Weather~\cite{OPENWEATHER}.}
